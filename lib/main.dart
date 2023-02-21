@@ -10,6 +10,38 @@ class HelloFlutterClass extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp();
+    return MaterialApp(
+      title: "Hello World, App!",
+      home: ScaffoldClass(),
+    );
+  }
+}
+
+class ScaffoldClass extends StatefulWidget {
+  @override
+  State<ScaffoldClass> createState() => StreamClass();
+}
+
+class StreamClass extends State<ScaffoldClass> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        actions: <Widget>[
+          TextButton(
+            onPressed: () {
+              print("You Just Pressed The Button!!");
+            },
+            child: Text("Action Button 1"),
+            style: TextButton.styleFrom(
+              backgroundColor: Colors.purple,
+              foregroundColor: Colors.white,
+            ),
+          )
+        ],
+        title: Text("✨Welcome to your 🍃Flutter🦜 App✨"),
+      ),
+      body: Text("This is the body of the scaffold"),
+    );
   }
 }
